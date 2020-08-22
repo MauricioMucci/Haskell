@@ -35,7 +35,7 @@ mBoard = [[True, False, False, False, False, False, False, False, False],
           [False, False, False, False, False, False, False, False, True]]
 
 
--- PART 1: BOARDS MANIPULATION (2D ARRAYS)
+-- PART 1: BOARD MANIPULATION (2D ARRAYS)
 
 
 -- gArr (get array): inputs are a position (p) and a list (array). 
@@ -81,7 +81,7 @@ isMine l c board
       | otherwise              = False
 
 -- isValidPos: inputs are the size of the board (e.g, if it's a 9x9 board, it's size is 9), a line and a column. 
--- Output is a boolean. True = valid position. False = invalid postition
+-- Output is a boolean. True = valid position. False = invalid position
 
 isValidPos :: Int -> Int -> Int -> Bool
 isValidPos size l c
@@ -118,7 +118,7 @@ cMinas l c board = counter board (validMoves (length board) l c)
 
 -- unlockPlay: main function of the game!!
 -- Inputs are a position (line and column), a Mine Board and a Game Board
---  Output is a updated Game Board
+--  Output is an updated Game Board
 
 unlockPlay :: Int -> Int -> MBoard -> GBoard -> GBoard
 unlockPlay l c mineBoard gameBoard
@@ -211,7 +211,7 @@ printBoard board = "\n" ++ " " ++ createColumns (length board) ++ "\n" ++ create
             addSpace [] = []
             addSpace (x:xs)  = x : ' ' : ' ' : addSpace xs
 
--- createList: inputs are a intenger (n) and a new value (v)
+-- createList: inputs are an intenger (n) and a new value (v)
 -- Output is a list containing (v) n times!
 
 createList :: Int -> a -> [a]
